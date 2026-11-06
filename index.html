@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEOUL BITES - Ẩm thực Hàn Quốc</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f2;
+            color: #292321;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #e84b43;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #292321;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .banner {
+            background: linear-gradient(#0007, #0007),
+            url("https://images.unsplash.com/photo-1498654896293-37aaciente?auto=format&fit=crop&w=1200&q=80");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .banner h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .banner a {
+            background-color: #e84b43;
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .menu {
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        .menu h2 {
+            color: #e84b43;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .food-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .food {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #0002;
+            padding-bottom: 20px;
+        }
+
+        .food img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food h3 {
+            margin: 15px;
+        }
+
+        .food p {
+            color: #777;
+            margin: 10px;
+        }
+
+        .price {
+            color: #e84b43;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #e84b43;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        button:hover {
+            background-color: #c93630;
+        }
+
+        .about {
+            background-color: #ffe7df;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #e84b43;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.8;
+        }
+
+        .contact {
+            background-color: #292321;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            line-height: 2;
+        }
+
+        footer {
+            background-color: #171311;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .food-container {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🍜 SEOUL BITES</div>
+
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#menu">Thực đơn</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+    </header>
+
+    <section class="banner" id="home">
+        <h1>ẨM THỰC HÀN QUỐC</h1>
+        <p>Khám phá hương vị xứ sở kim chi ngay hôm nay!</p>
+        <a href="#menu">Khám phá thực đơn</a>
+    </section>
+
+    <section class="menu" id="menu">
+        <h2>🍱 THỰC ĐƠN CỦA CHÚNG TÔI</h2>
+
+        <div class="food-container">
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1635363638580-c2809d049eee?auto=format&fit=crop&w=800&q=80">
+                <h3>Tokbokki</h3>
+                <p>Bánh gạo cay Hàn Quốc thơm ngon.</p>
+                <div class="price">45.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80">
+                <h3>Gà rán Hàn Quốc</h3>
+                <p>Gà giòn rụm với nước sốt đặc biệt.</p>
+                <div class="price">69.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80">
+                <h3>Mì tương đen</h3>
+                <p>Mì dai ngon cùng nước sốt đậm đà.</p>
+                <div class="price">55.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80">
+                <h3>Cơm trộn Bibimbap</h3>
+                <p>Cơm trộn rau củ và trứng hấp dẫn.</p>
+                <div class="price">59.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+                <h3>Bánh xếp Mandu</h3>
+                <p>Bánh xếp nhân thịt và rau củ.</p>
+                <div class="price">40.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+            <div class="food">
+                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80">
+                <h3>Trà trái cây</h3>
+                <p>Thức uống mát lạnh, thơm ngon.</p>
+                <div class="price">29.000đ</div>
+                <button onclick="addCart()">Đặt món</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>❤️ GIỚI THIỆU VỀ QUÁN</h2>
+        <p>
+            SEOUL BITES là quán ăn chuyên phục vụ các món ăn
+            truyền thống nổi tiếng của Hàn Quốc.
+            Với thực đơn phong phú, nguyên liệu tươi ngon
+            và phong cách phục vụ thân thiện, chúng tôi
+            mong muốn mang đến cho khách hàng trải nghiệm
+            ẩm thực tuyệt vời.
+        </p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>📍 LIÊN HỆ VỚI CHÚNG TÔI</h2>
+        <p>Địa chỉ: 123 Đường Ẩm Thực, TP. Hồ Chí Minh</p>
+        <p>Điện thoại: 0900 123 456</p>
+        <p>Giờ mở cửa: 09:00 - 22:00</p>
+    </section>
+
+    <footer>
+        <p>© 2026 SEOUL BITES - Hương vị Hàn Quốc 🇰🇷</p>
+    </footer>
+
+    <script>
+        let cart = 0;
+
+        function addCart() {
+            cart++;
+            alert("Bạn đã thêm món vào giỏ hàng!");
+        }
+    </script>
+
+</body>
+</html>
